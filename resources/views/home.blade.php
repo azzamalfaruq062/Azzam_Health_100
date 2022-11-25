@@ -8,7 +8,8 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
                     <a class="btn btn-sm btn-outline-warning" style="border-radius: 40px" href="{{url('/home')}}">Kembali</a>
-                    <form action="{{route('bmi')}}">
+                    <form action="{{route('bmi')}}" method="POST">
+                        @csrf
                         <div class="input-group">
                             <div class="col pe-1">
                                 <label>Nama :</label>

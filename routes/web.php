@@ -28,8 +28,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //auth 
 Route::middleware('auth')->group(function(){
-
-
     Route::resource('kategori', KategoriController::class);
     Route::get('deletkategori/{kategori}', [KategoriController::class, 'destroy'])->name('deletkategori');
     Route::resource('artikel', ArtikelController::class);
@@ -40,7 +38,7 @@ Route::middleware('auth')->group(function(){
 Route::middleware(['auth', 'admin'])->group(function(){
     Route::resource('user', UserController::class);
     Route::get('deletuser/{id}', [UserController::class, 'destroy'])->name('deletuser');
-    Route::get('bmi', [InherictController::class, 'bmi'])->name('bmi');
+    Route::post('bmi', [InherictController::class, 'bmi'])->name('bmi');
 });
 
 
